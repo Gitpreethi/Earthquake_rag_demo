@@ -1,0 +1,74 @@
+{
+  "files": {
+    "DM-Act-2005.pdf": {
+      "sha256": "e4dad905884fcf2c6342d4def886465b2b47db8acdf658b83351ad6784565295",
+      "document_name": "The Disaster Management Act, 2005",
+      "document_type": "legislation",
+      "file_type": "pdf",
+      "chunks": 166,
+      "pages": 39,
+      "sheets": null,
+      "warnings": [],
+      "ingested_at": "2026-10-07T13:51:23+00:00",
+      "timing_s": {
+        "load_chunk": 0.61,
+        "embed": 9.55,
+        "upsert": 1.38
+      }
+    },
+    "earthquake-sikkireco.pdf": {
+      "sha256": "e8f6fba8ca3257b3661242f0436f1b1ef9d15850dca5dc3149b0e53adfadd169",
+      "document_name": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+      "document_type": "report",
+      "file_type": "pdf",
+      "chunks": 103,
+      "pages": 56,
+      "sheets": null,
+      "warnings": [
+        "10 page(s) without extractable text (likely scanned images/figures; OCR not enabled): [44, 45, 46, 47, 48, 49, 50, 51, 52, 53]"
+      ],
+      "ingested_at": "2026-10-07T13:51:30+00:00",
+      "timing_s": {
+        "load_chunk": 0.42,
+        "embed": 5.43,
+        "upsert": 0.77
+      }
+    },
+    "Eartrhquake.pdf": {
+      "sha256": "aede9c9a778b819dc942f126e0c9c3d588a7bdaabd01bc35ab41773b065cc9b1",
+      "document_name": "NDRF Standard Operating Procedure on Earthquake",
+      "document_type": "standard_operating_procedure",
+      "file_type": "pdf",
+      "chunks": 66,
+      "pages": 40,
+      "sheets": null,
+      "warnings": [
+        "1 page(s) without extractable text (likely scanned images/figures; OCR not enabled): [39]"
+      ],
+      "ingested_at": "2026-10-07T13:51:40+00:00",
+      "timing_s": {
+        "load_chunk": 0.21,
+        "embed": 7.44,
+        "upsert": 2.9
+      }
+    },
+    "Official Website of National Center of Seismology 1.xlsx": {
+      "sha256": "2627532e4707fb76e7fe4bfcb646c9935cf37316a939e35b6ba32ce7fa429479",
+      "document_name": "Official Website of National Center of Seismology",
+      "document_type": "seismic_catalog",
+      "file_type": "excel",
+      "chunks": 1081,
+      "pages": null,
+      "sheets": [
+        "Sheet1"
+      ],
+      "warnings": [],
+      "ingested_at": "2026-10-07T16:14:07+00:00",
+      "timing_s": {
+        "load_chunk": 3.53,
+        "embed": 8531.34,
+        "upsert": 11.6
+      }
+    }
+  }
+}

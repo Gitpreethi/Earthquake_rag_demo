@@ -1,0 +1,4 @@
+{
+  "_comment": "Optional display metadata overrides keyed by file name (or path relative to data/). Only used for naming/typing documents; content is always extracted from the files.",
+  "Eartrhquake.pdf": {"document_name": "NDRF Standard Operating Procedure on Earthquake"}
+}

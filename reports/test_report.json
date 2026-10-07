@@ -1,0 +1,2322 @@
+{
+  "summary": {
+    "run_at": "2026-10-06T02:37:24",
+    "llm": {
+      "provider": "extractive",
+      "model": "none (evidence sentences only)",
+      "generative": false
+    },
+    "queries": 17,
+    "hit_at_k": 1.0,
+    "mrr": 1.0,
+    "mean_source_recall": 1.0,
+    "abstention_rate_on_out_of_scope": 0.5,
+    "status_match_rate": 0.765,
+    "mean_latency_ms": 76.5
+  },
+  "results": [
+    {
+      "test": {
+        "id": "H1",
+        "category": "historical",
+        "question": "What information is available about the 2001 Gujarat earthquake?",
+        "expected_sources": [
+          "earthquake-sikkireco",
+          "National Center of Seismology"
+        ],
+        "expected_status": [
+          "partial",
+          "insufficient"
+        ],
+        "note": "Current corpus has no dedicated 2001 Kutch/Bhuj document (KUTCH 2001.pdf not yet added); only a reference to 'Gujarat earthquake lessons' and the 2016-2024 NCS catalogue for Gujarat."
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.7939,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "earthquake-sikkireco",
+          "National Center of Seismology"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- Earthquake catalogue summary for Gujarat (India) – source: Official Website of National Center of Seismology. [E1]\n- Earthquake events recorded in Gujarat, India (events 1–10 of 164): [E2]\n- Earthquake catalogue summary for Haryana (India) – source: Official Website of National Center of Seismology. [E3]\n- Earthquake catalogue summary for Haryana – source: Official Website of National Center of Seismology. [E4]\n- Implementation Strategy (adapted from Gujarat Earthquake Lessons) The implementation strategy, which harmonizes the emergency nature of reconstruction program with a strong emphasis on community participation and seismic safety measures against mountain settlements. [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 675.1,
+        "dense_search": 276.1,
+        "keyword_search": 1.4,
+        "fusion": 0.2,
+        "retrieval_total": 952.9,
+        "generation": 1.0,
+        "total": 954.0
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 164 rows summarised",
+          "section": "Gujarat",
+          "relevance": 1.0,
+          "dense": 0.7916,
+          "bm25": 10.498,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 70–507",
+          "section": "Gujarat",
+          "relevance": 0.9318,
+          "dense": 0.7894,
+          "bm25": 10.783,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 108 rows summarised",
+          "section": "Haryana",
+          "relevance": 0.4384,
+          "dense": 0.752,
+          "bm25": null,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 54 rows summarised",
+          "section": "Haryana",
+          "relevance": 0.4277,
+          "dense": 0.7486,
+          "bm25": null,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "pp. 38–39",
+          "section": "Introduction",
+          "relevance": 0.391,
+          "dense": null,
+          "bm25": 10.603,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "pp. 55–56",
+          "section": "Documentation Of Sikkim Earthquake 2011",
+          "relevance": 0.3812,
+          "dense": null,
+          "bm25": 8.014,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 6",
+          "section": "Contents",
+          "relevance": 0.3675,
+          "dense": null,
+          "bm25": 3.679,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 6",
+          "section": "1. Introduction",
+          "relevance": 0.3631,
+          "dense": null,
+          "bm25": 3.639,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "H2",
+        "category": "historical",
+        "question": "When did the 2011 Sikkim earthquake occur and what was its magnitude?",
+        "expected_sources": [
+          "earthquake-sikkireco"
+        ],
+        "expected_status": [
+          "answered"
+        ]
+      },
+      "status": "partial",
+      "status_ok": false,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.8262,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "earthquake-sikkireco"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- Chandan Ghosh, Professor and Head and Dr Surya Parkash, Associate Professor, Geohazards Division, to document the Mw6.9 Sikkim Earthquake that struck on Sunday, 18 September 2011, at 18:10:48 hrs (IST). [E1]\n- The Fateful Sunday – Sept 18, 2011 On Sunday, 18 September 2011 at 6:11PM (local time), a Mw 6.9 earthquake with an epicenter located near the Sikkim-Nepal border region (27.723°N, 88.064°E), killed 77 people, including 16 at the Teesta Stage III Hydroelectric power project site, injured 719, left thousands homeless, and temporarily displaced many and also caused substantial loss to livestock. [E2]\n- Earthquakes in the last two centuries have already caused approximately $3.14 trillion (2011 HNDECI-Adjusted int. dollars) damage (of this around 20% has occurred in 2011, mostly due to Tohoku earthquake, Japan). [E3]\n- Progressive: Ongoing long-term development progress is maintained, and long term community goals are not sacrificed for short-term individual benefits Importance of Damage survey – first few days Immediately after and during the first few days after the earthquake, thousands of buildings may result damaged, while new shocks can still occur. [E4]\n- Be aware that some earthquakes are actually foreshocks, and a larger earthquake might occur. [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 19.6,
+        "keyword_search": 1.7,
+        "fusion": 0.2,
+        "retrieval_total": 21.6,
+        "generation": 0.7,
+        "total": 22.4
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "pp. 3–4",
+          "section": "Contents",
+          "relevance": 0.934,
+          "dense": 0.8189,
+          "bm25": 12.391,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 11",
+          "section": "Introduction",
+          "relevance": 0.9067,
+          "dense": 0.8262,
+          "bm25": 11.662,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 6",
+          "section": "Contents",
+          "relevance": 0.7945,
+          "dense": 0.7916,
+          "bm25": 12.288,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 17",
+          "section": "Introduction",
+          "relevance": 0.5,
+          "dense": null,
+          "bm25": 15.491,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "pp. 6–7",
+          "section": "1. Introduction",
+          "relevance": 0.4919,
+          "dense": null,
+          "bm25": 14.147,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 5874–6355",
+          "section": "Sikkim",
+          "relevance": 0.4841,
+          "dense": 0.8117,
+          "bm25": null,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 3",
+          "section": "Ndrf • India",
+          "relevance": 0.4841,
+          "dense": null,
+          "bm25": 13.669,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 4566–4764",
+          "section": "Sikkim",
+          "relevance": 0.4766,
+          "dense": 0.8094,
+          "bm25": null,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "H3",
+        "category": "historical",
+        "question": "Which were the strongest earthquakes recorded in India in the National Center of Seismology catalogue?",
+        "expected_sources": [
+          "National Center of Seismology"
+        ],
+        "expected_status": [
+          "answered",
+          "partial"
+        ]
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.8049,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "National Center of Seismology"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- Earthquake catalogue summary for Chhattisgarh (India) – source: Official Website of National Center of Seismology. [E1]\n- Earthquake catalogue summary for Chandigarh (India) – source: Official Website of National Center of Seismology. [E2]\n- Earthquake catalogue summary for Goa (India) – source: Official Website of National Center of Seismology. [E3]\n- Earthquake catalogue summary for Bihar (India) – source: Official Website of National Center of Seismology. [E4]\n- Earthquake catalogue summary for Karnataka (India) – source: Official Website of National Center of Seismology. [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 19.4,
+        "keyword_search": 2.3,
+        "fusion": 0.2,
+        "retrieval_total": 22.1,
+        "generation": 0.6,
+        "total": 22.8
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 50 rows summarised",
+          "section": "Chhattisgarh",
+          "relevance": 1.0,
+          "dense": 0.7913,
+          "bm25": 20.614,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 12 rows summarised",
+          "section": "Chandigarh",
+          "relevance": 1.0,
+          "dense": 0.7859,
+          "bm25": 20.689,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 1 rows summarised",
+          "section": "Goa",
+          "relevance": 1.0,
+          "dense": 0.7771,
+          "bm25": 24.365,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 3 rows summarised",
+          "section": "Bihar",
+          "relevance": 1.0,
+          "dense": 0.7792,
+          "bm25": 22.449,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 55 rows summarised",
+          "section": "Karnataka",
+          "relevance": 1.0,
+          "dense": 0.7856,
+          "bm25": 20.651,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 10 rows summarised",
+          "section": "Kerala",
+          "relevance": 1.0,
+          "dense": 0.7854,
+          "bm25": 20.651,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 1 rows summarised",
+          "section": "Lakshadweep Island",
+          "relevance": 0.9935,
+          "dense": 0.7721,
+          "bm25": 24.065,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 10 rows summarised",
+          "section": "Tamil Nadu",
+          "relevance": 0.9816,
+          "dense": 0.7834,
+          "bm25": 20.539,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "P1",
+        "category": "policy",
+        "question": "What does the Disaster Management Act 2005 say about disaster management?",
+        "expected_sources": [
+          "DM-Act-2005"
+        ],
+        "expected_status": [
+          "answered",
+          "partial"
+        ]
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.8427,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "DM-Act-2005"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- 53 OF 2005 [23rd December, 2005.] An Act to provide for the effective management of disasters and for matters connected therewith or incidental thereto. [E1]\n- The Disaster Management Act, 2005 (Act No. [E2]\n- The Disaster Management Bill, 2005 provides for setting up of a National Disaster Management Authority under the Chairmanship of the Prime Minister, State Disaster Management Authorities under the Chairmanship of the Chief Ministers and District Disaster Management Authorities under the Chairmanship of District Magistrates. [E3]\n- The Government have decided to enact a law on disaster management to provide for requisite institutional mechanisms for drawing up and monitoring the implementation of the disaster management plans, ensuring measures by various wings of Government for prevention and mitigating effects of disasters and for undertaking a holistic, coordinated and prompt response to any disaster situation. [E4]\n- Powers and functions of District Authority.—(1) The District Authority shall act as the district planning, coordinating and implementing body for disaster management and take all measures for the purposes of disaster management in the district in accordance with the guidelines laid down by the National Authority and the State Authority. [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 13.5,
+        "keyword_search": 1.7,
+        "fusion": 0.2,
+        "retrieval_total": 15.4,
+        "generation": 0.5,
+        "total": 15.9
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 6",
+          "section": "Chapter XI – Miscellaneous › The Disaster Management Act, 2005",
+          "relevance": 1.0,
+          "dense": 0.8427,
+          "bm25": 22.616,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "pp. 1–2",
+          "section": "Amending Acts",
+          "relevance": 0.9839,
+          "dense": 0.8236,
+          "bm25": 22.436,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 39",
+          "section": "Chapter XI – Miscellaneous › Statement Of Objects And Reasons",
+          "relevance": 0.9607,
+          "dense": 0.8044,
+          "bm25": 21.025,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 39",
+          "section": "Chapter XI – Miscellaneous › Statement Of Objects And Reasons",
+          "relevance": 0.8854,
+          "dense": 0.8184,
+          "bm25": 20.304,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "pp. 19–20",
+          "section": "Chapter IV – District Disaster Management Authority › Section 30. Powers and functions of District Authority",
+          "relevance": 0.8777,
+          "dense": 0.7806,
+          "bm25": 20.532,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 6",
+          "section": "Chapter I – Preliminary › Section 1. Short title, extent and commencement",
+          "relevance": 0.8603,
+          "dense": 0.7985,
+          "bm25": 20.271,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "pp. 26–27",
+          "section": "Chapter V – Measures By The Government For Disaster Management › Section 40. Disaster management plan of departments of State",
+          "relevance": 0.8309,
+          "dense": 0.7702,
+          "bm25": 20.457,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 28",
+          "section": "Chapter VII – National Instituteof Disaster Management › Section 42. National Institute of Disaster Management",
+          "relevance": 0.8232,
+          "dense": 0.7555,
+          "bm25": 20.905,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "P2",
+        "category": "policy",
+        "question": "What are the powers and functions of the District Disaster Management Authority?",
+        "expected_sources": [
+          "DM-Act-2005"
+        ],
+        "expected_status": [
+          "answered"
+        ]
+      },
+      "status": "partial",
+      "status_ok": false,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.8606,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "DM-Act-2005"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- Powers and functions of District Authority in the event of any threatening disaster situation or disaster. [E1]\n- Powers and functions of District Authority.—(1) The District Authority shall act as the district planning, coordinating and implementing body for disaster management and take all measures for the purposes of disaster management in the district in accordance with the guidelines laid down by the National Authority and the State Authority. [E2]\n- Powers of Chairperson of District Authority.—(1) The Chairperson of the District Authority shall, in addition to presiding over the meetings of the District Authority, exercise and discharge such powers and functions of the District Authority as the District Authority may delegate to him. [E3]\n- Powers and functions of District Authority in the event of any threatening disaster situation or disaster.—For the purpose of assisting, protecting or providing relief to the community, in response to any threatening disaster situation or disaster, the District Authority may— [E4]\n- (xxix) perform such other functions as the State Government or State Authority may assign to it or as it deems necessary for disaster management in the District. [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 23.9,
+        "keyword_search": 1.7,
+        "fusion": 0.2,
+        "retrieval_total": 25.8,
+        "generation": 0.6,
+        "total": 26.4
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "pp. 3–4",
+          "section": "Chapter IV – District Disaster Management Authority",
+          "relevance": 0.9919,
+          "dense": 0.8432,
+          "bm25": 29.096,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "pp. 19–20",
+          "section": "Chapter IV – District Disaster Management Authority › Section 30. Powers and functions of District Authority",
+          "relevance": 0.9841,
+          "dense": 0.8606,
+          "bm25": 27.971,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 19",
+          "section": "Chapter IV – District Disaster Management Authority › Section 26. Powers of Chairperson of District Authority",
+          "relevance": 0.9276,
+          "dense": 0.814,
+          "bm25": 28.6,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 22",
+          "section": "Chapter IV – District Disaster Management Authority › Section 32. Plans by different authorities at district level and their implementation",
+          "relevance": 0.9251,
+          "dense": 0.8339,
+          "bm25": 25.431,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 21",
+          "section": "Chapter IV – District Disaster Management Authority › Section 30. Powers and functions of District Authority",
+          "relevance": 0.9245,
+          "dense": 0.8316,
+          "bm25": 26.943,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 20",
+          "section": "Chapter IV – District Disaster Management Authority › Section 30. Powers and functions of District Authority",
+          "relevance": 0.9198,
+          "dense": 0.8351,
+          "bm25": 25.325,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 20",
+          "section": "Chapter IV – District Disaster Management Authority › Section 30. Powers and functions of District Authority",
+          "relevance": 0.887,
+          "dense": 0.8323,
+          "bm25": 24.901,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "pp. 14–15",
+          "section": "Chapter III – State Disaster Management Authorities › Section 18. Powers and functions of State Authority",
+          "relevance": 0.8799,
+          "dense": 0.8029,
+          "bm25": 26.506,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "P3",
+        "category": "policy",
+        "question": "How is the National Disaster Response Force constituted under the DM Act?",
+        "expected_sources": [
+          "DM-Act-2005"
+        ],
+        "expected_status": [
+          "answered"
+        ]
+      },
+      "status": "partial",
+      "status_ok": false,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.869,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "DM-Act-2005"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- National Disaster Response Force.—(1) There shall be constituted a National Disaster Response Force for the purpose of specialist response to a threatening disaster situation or disaster. [E1]\n- (2) Subject to the provisions of this Act, the State Disaster Response Force shall be constituted in such manner, with such functions and the terms and conditions of service of the members of such Force shall be such as may be prescribed by the State Government concerned.] [E2]\n- It provides for constitution of a National Disaster Response Force and setting up the National Institute of Disaster Management. [E3]\n- (l) \"National Plan\" means the plan for disaster management for the whole of the country prepared under section 11; [E4]\n- NDRF National Disaster Response Force 2. [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 25.0,
+        "keyword_search": 2.3,
+        "fusion": 0.2,
+        "retrieval_total": 27.5,
+        "generation": 4.5,
+        "total": 32.1
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 29",
+          "section": "Chapter VIII – 2[Disaster Response Force] › Section 44. National Disaster Response Force",
+          "relevance": 1.0,
+          "dense": 0.869,
+          "bm25": 40.334,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 29",
+          "section": "Chapter VIII – 2[Disaster Response Force] › Section 44A. State Disaster Response Force",
+          "relevance": 0.9839,
+          "dense": 0.815,
+          "bm25": 35.039,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 39",
+          "section": "Chapter XI – Miscellaneous › Statement Of Objects And Reasons",
+          "relevance": 0.9262,
+          "dense": 0.806,
+          "bm25": 27.197,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 8",
+          "section": "Chapter I – Preliminary › Section 2. Definitions",
+          "relevance": 0.9251,
+          "dense": 0.805,
+          "bm25": 27.224,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "pp. 4–5",
+          "section": "Ndrf • India › 8.5 De-Activation Phase",
+          "relevance": 0.4067,
+          "dense": null,
+          "bm25": 22.453,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 28",
+          "section": "Introduction",
+          "relevance": 0.3812,
+          "dense": null,
+          "bm25": 21.028,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 4",
+          "section": "Chapter VI – Local Authorities",
+          "relevance": 0.9251,
+          "dense": 0.7842,
+          "bm25": 30.188,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 29",
+          "section": "Chapter VIII – 2[Disaster Response Force] › Section 45. Control, direction, etc",
+          "relevance": 0.9113,
+          "dense": 0.7813,
+          "bm25": 29.701,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "P4",
+        "category": "policy",
+        "question": "What is the punishment for a false warning under the Disaster Management Act?",
+        "expected_sources": [
+          "DM-Act-2005"
+        ],
+        "expected_status": [
+          "answered"
+        ]
+      },
+      "status": "partial",
+      "status_ok": false,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.8725,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "DM-Act-2005"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- Punishment for false warning.—Whoever makes or circulates a false alarm or warning as to disaster or its severity or magnitude, leading to panic, shall on conviction, be punishable with imprisonment which may extend to one year or with fine. [E1]\n- Punishment for false claim.—Whoever knowingly makes a claim which he knows or has reason to believe to be false for obtaining any relief, assistance, repair, reconstruction or other benefits consequent to disaster from any officer of the Central Government, the State Government, the National Authority, the State Authority 3[, the District Authority or the Urban Authority], shall, on conviction be  [E2]\n- Punishment for false warning. [E3]\n- (a) obstructs any officer or employee of the Central Government or the State Government, or a person authorised by the National Authority or State Authority or District Authority 1[or Urban Authority] in the discharge of his functions under this Act; or [E4]\n- Pre-disaster database, Forecasting, Warning Training & capacity building of community Enforcement of Codes, guidelines Damage & Loss assessment Rehabilitation phase Immediate relief & rescue Disaster Impact (Earthquake) & landslides Institutionalization of DM and developments Typological, dimensional and functional data Evaluation and assessment of loss Road map for long term reconstructions Post- [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 24.5,
+        "keyword_search": 2.0,
+        "fusion": 0.2,
+        "retrieval_total": 26.9,
+        "generation": 4.7,
+        "total": 31.6
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 31",
+          "section": "Chapter X – Offences And Penalties › Section 54. Punishment for false warning",
+          "relevance": 1.0,
+          "dense": 0.8725,
+          "bm25": 37.469,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 31",
+          "section": "Chapter X – Offences And Penalties › Section 52. Punishment for false claim",
+          "relevance": 0.9761,
+          "dense": 0.8016,
+          "bm25": 30.138,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "pp. 4–5",
+          "section": "Chapter IX – Finance, Accounts And Audit",
+          "relevance": 0.9761,
+          "dense": 0.8005,
+          "bm25": 35.765,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 31",
+          "section": "Chapter X – Offences And Penalties › Section 51. Punishment for obstruction, etc",
+          "relevance": 0.9038,
+          "dense": 0.7205,
+          "bm25": 17.3,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 56",
+          "section": "Post Event",
+          "relevance": 0.3812,
+          "dense": null,
+          "bm25": 10.895,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 32",
+          "section": "Chapter X – Offences And Penalties › Section 60. Cognizance of offences",
+          "relevance": 0.8928,
+          "dense": 0.7496,
+          "bm25": 14.199,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 25",
+          "section": "Chapter V – Measures By The Government For Disaster Management › Section 38. State Government to take measures",
+          "relevance": 0.8799,
+          "dense": 0.6982,
+          "bm25": 17.451,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 32",
+          "section": "Chapter X – Offences And Penalties › Section 58. Offence by companies",
+          "relevance": 0.8777,
+          "dense": 0.7138,
+          "bm25": 15.244,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "L1",
+        "category": "location",
+        "question": "What earthquake information is available for Sikkim?",
+        "expected_sources": [
+          "earthquake-sikkireco",
+          "National Center of Seismology"
+        ],
+        "expected_status": [
+          "answered",
+          "partial"
+        ]
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.8628,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "earthquake-sikkireco",
+          "National Center of Seismology"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- It is not a post-earthquake discovery that Sikkim lies in the severe seismic zone of India. [E1]\n- Chandan Ghosh, Professor and Head and Dr Surya Parkash, Associate Professor, Geohazards Division, to document the Mw6.9 Sikkim Earthquake that struck on Sunday, 18 September 2011, at 18:10:48 hrs (IST). [E2]\n- earthquakes are not new to the Sikkim; its history is teeming with deadly tremors. [E3]\n- Lessons from Sikkim Earthquake – status check [E4]\n- Earthquake events recorded in Sikkim, India (events 151–160 of 203): [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 24.6,
+        "keyword_search": 0.9,
+        "fusion": 0.2,
+        "retrieval_total": 25.8,
+        "generation": 0.6,
+        "total": 26.4
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 7",
+          "section": "Contents",
+          "relevance": 0.8508,
+          "dense": 0.83,
+          "bm25": 8.092,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "pp. 3–4",
+          "section": "Contents",
+          "relevance": 0.8158,
+          "dense": 0.8099,
+          "bm25": 7.938,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "pp. 17–18",
+          "section": "Introduction",
+          "relevance": 0.7605,
+          "dense": 0.8095,
+          "bm25": 7.747,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 13",
+          "section": "Introduction",
+          "relevance": 0.7511,
+          "dense": 0.7962,
+          "bm25": 7.731,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 6697–7564",
+          "section": "Sikkim",
+          "relevance": 0.5,
+          "dense": 0.8628,
+          "bm25": null,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 3054–3982",
+          "section": "Sikkim",
+          "relevance": 0.4919,
+          "dense": 0.8601,
+          "bm25": null,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 29",
+          "section": "Introduction",
+          "relevance": 0.5,
+          "dense": null,
+          "bm25": 8.173,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 1489–1717",
+          "section": "Sikkim",
+          "relevance": 0.4841,
+          "dense": 0.8594,
+          "bm25": null,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "L2",
+        "category": "location",
+        "question": "Which earthquakes have been recorded in Uttarakhand?",
+        "expected_sources": [
+          "National Center of Seismology"
+        ],
+        "expected_status": [
+          "answered",
+          "partial"
+        ]
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.8653,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "National Center of Seismology"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- Earthquake events recorded in Uttarakhand, India (events 511–520 of 587): [E1]\n- Earthquake events recorded in Uttarakhand, India (events 311–320 of 587): [E2]\n- Earthquake events recorded in Uttarakhand, India (events 571–580 of 587): [E3]\n- Earthquake events recorded in Uttarakhand, India (events 71–80 of 587): [E4]\n- Earthquake events recorded in Uttarakhand, India (events 201–210 of 587): [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 17.3,
+        "keyword_search": 1.0,
+        "fusion": 0.2,
+        "retrieval_total": 18.6,
+        "generation": 0.8,
+        "total": 19.4
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 8773–8849",
+          "section": "Uttarakhand",
+          "relevance": 0.872,
+          "dense": 0.8653,
+          "bm25": 9.696,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 7423–7496",
+          "section": "Uttarakhand",
+          "relevance": 0.8663,
+          "dense": 0.8568,
+          "bm25": 9.705,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 9714–9934",
+          "section": "Uttarakhand",
+          "relevance": 0.8365,
+          "dense": 0.8591,
+          "bm25": 9.696,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 1603–1694",
+          "section": "Uttarakhand",
+          "relevance": 0.8358,
+          "dense": 0.8555,
+          "bm25": 9.705,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 5680–5803",
+          "section": "Uttarakhand",
+          "relevance": 0.7871,
+          "dense": 0.853,
+          "bm25": 9.705,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 8472–8582",
+          "section": "Uttarakhand",
+          "relevance": 0.7863,
+          "dense": 0.8557,
+          "bm25": 9.687,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 7357–7413",
+          "section": "Uttarakhand",
+          "relevance": 0.7823,
+          "dense": 0.8499,
+          "bm25": 9.714,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 8150–8197",
+          "section": "Uttarakhand",
+          "relevance": 0.7809,
+          "dense": 0.8489,
+          "bm25": 9.714,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "L3",
+        "category": "location",
+        "question": "What seismic activity has been recorded around the Andaman and Nicobar Islands?",
+        "expected_sources": [
+          "National Center of Seismology"
+        ],
+        "expected_status": [
+          "answered",
+          "partial"
+        ]
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.8556,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "National Center of Seismology"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- Earthquake events recorded in Andaman and Nicobar Islands, India (events 101–110 of 668): [E1]\n- Earthquake events recorded in Andaman and Nicobar Islands, India (events 71–80 of 668): [E2]\n- Earthquake Forecasting Exercise – IMD to come upto people's expectation India Meteorological Department (IMD) is the nodal agency of Government of India responsible for monitoring seismic activity in and around the country. [E3]\n- Earthquake events recorded in Andaman and Nicobar Islands, India (events 421–430 of 668): [E4]\n- Earthquake events recorded in Andaman and Nicobar Islands, India (events 521–530 of 668): [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 21.3,
+        "keyword_search": 2.0,
+        "fusion": 0.2,
+        "retrieval_total": 23.6,
+        "generation": 0.9,
+        "total": 24.6
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 1230–1358",
+          "section": "Andaman and Nicobar Islands",
+          "relevance": 0.9692,
+          "dense": 0.8556,
+          "bm25": 20.697,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 842–990",
+          "section": "Andaman and Nicobar Islands",
+          "relevance": 0.9607,
+          "dense": 0.8528,
+          "bm25": 20.708,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 19",
+          "section": "Introduction",
+          "relevance": 0.5,
+          "dense": null,
+          "bm25": 22.927,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 3884–4089",
+          "section": "Andaman and Nicobar Islands",
+          "relevance": 0.9155,
+          "dense": 0.8555,
+          "bm25": 20.666,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 6308–6468",
+          "section": "Andaman and Nicobar Islands",
+          "relevance": 0.8848,
+          "dense": 0.8516,
+          "bm25": 20.666,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 9718–9927",
+          "section": "Andaman and Nicobar Islands",
+          "relevance": 0.883,
+          "dense": 0.8489,
+          "bm25": 20.804,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 3758–3883",
+          "section": "Andaman and Nicobar Islands",
+          "relevance": 0.8565,
+          "dense": 0.8492,
+          "bm25": 20.687,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 7511–7810",
+          "section": "Andaman and Nicobar Islands",
+          "relevance": 0.8479,
+          "dense": 0.8499,
+          "bm25": 20.676,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "M1",
+        "category": "multi_document",
+        "question": "What emergency response information is present in the knowledge base?",
+        "expected_sources": [
+          "DM-Act-2005",
+          "Eartrhquake"
+        ],
+        "expected_status": [
+          "answered",
+          "partial"
+        ]
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.7007,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "DM-Act-2005",
+          "Eartrhquake"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- (g) require any Ministry or Department or agency of the Government to make available to the Central Government or State Government such men or material resources as are available with it for the purposes of emergency response, rescue and relief; [E1]\n- An ambulance equipped with BLS equipment, DM medicines along with required stores shall be prepared and taken along by USAR Team for disaster response. [E2]\n- (xvii) ensure that the Departments of the Government at the district level and the local authorities prepare their response plans in accordance with the district response plan; [E3]\n- National Disaster Response Force.—(1) There shall be constituted a National Disaster Response Force for the purpose of specialist response to a threatening disaster situation or disaster. [E4]\n- State Disaster Response Force.—(1) The State Government may, by notification in the Official Gazette, constitute a State Disaster Response Force for the purpose of specialist response to a threatening disaster situation or disaster. [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 12.4,
+        "keyword_search": 0.7,
+        "fusion": 0.2,
+        "retrieval_total": 13.4,
+        "generation": 0.5,
+        "total": 13.9
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "pp. 12–13",
+          "section": "Chapter II – The National Disaster Management Authority › Section 10. Powers and functions of National Executive Committee",
+          "relevance": 0.9612,
+          "dense": 0.6995,
+          "bm25": 9.853,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "pp. 9–10",
+          "section": "8. Execution Of The Earthquake Disaster Response › 8.1 Preparatory Stage",
+          "relevance": 0.8779,
+          "dense": 0.6514,
+          "bm25": 9.963,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 20",
+          "section": "Chapter IV – District Disaster Management Authority › Section 30. Powers and functions of District Authority",
+          "relevance": 0.8323,
+          "dense": 0.6743,
+          "bm25": 5.36,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 29",
+          "section": "Chapter VIII – 2[Disaster Response Force] › Section 44. National Disaster Response Force",
+          "relevance": 0.8281,
+          "dense": 0.6602,
+          "bm25": 6.061,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 29",
+          "section": "Chapter VIII – 2[Disaster Response Force] › Section 44A. State Disaster Response Force",
+          "relevance": 0.8267,
+          "dense": 0.6598,
+          "bm25": 6.132,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 7",
+          "section": "3. Purpose",
+          "relevance": 0.7012,
+          "dense": 0.6342,
+          "bm25": 5.281,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 37",
+          "section": "Introduction",
+          "relevance": 0.5,
+          "dense": null,
+          "bm25": 10.916,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 4",
+          "section": "Contents",
+          "relevance": 0.4919,
+          "dense": null,
+          "bm25": 10.323,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "M2",
+        "category": "multi_document",
+        "question": "How do NDRF search and rescue procedures relate to the legal role of the National Disaster Response Force?",
+        "expected_sources": [
+          "Eartrhquake",
+          "DM-Act-2005"
+        ],
+        "expected_status": [
+          "answered",
+          "partial"
+        ]
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.7799,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "Eartrhquake",
+          "DM-Act-2005"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- National Disaster Response Force.—(1) There shall be constituted a National Disaster Response Force for the purpose of specialist response to a threatening disaster situation or disaster. [E1]\n- This document describes a high level concept of search & rescue operations for ensuring an integrated response to damaging earthquake impacting India involving SDRF, Civil Defence & Home Guards and other stakeholders. [E2]\n- Directorate General National Disaster Response Force Ministry of Home Affairs 9th Floor, Paryavaran Bhawan, CGO Complex, Lodhi Road, New Delhi-110003 Phone: 24363260 • Fax: 24363261 Website: www.ndrfandcd.gov.in Design & Print by : kam@kamstudio.net [E3]\n- While disaster response, the primary tasks of the NDRF shall remain focused towards ensuring the rescue, safety and protection of the disaster victims entrapped under the debris or entangled in any other life threatening situation. [E4]\n- In case, an earthquake disaster involves deployment of Team of a Battalion in its AOR only, the State/District Authorities shall identify the most likely arrival point of responding Team(s) of the NDRF or other agencies and to establish 'Reception Departure Centre' (RDC) appropriately in view of arrival whether by road/rail/air. [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 22.1,
+        "keyword_search": 3.6,
+        "fusion": 0.2,
+        "retrieval_total": 25.9,
+        "generation": 0.5,
+        "total": 26.5
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 29",
+          "section": "Chapter VIII – 2[Disaster Response Force] › Section 44. National Disaster Response Force",
+          "relevance": 0.9621,
+          "dense": 0.7304,
+          "bm25": 44.701,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 3",
+          "section": "Ndrf • India",
+          "relevance": 0.942,
+          "dense": 0.7799,
+          "bm25": 36.947,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "pp. 38–40",
+          "section": "Rescue Operation",
+          "relevance": 0.8802,
+          "dense": 0.7113,
+          "bm25": 42.563,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 16",
+          "section": "Sitrep. › 8.4 Operation Phase",
+          "relevance": 0.873,
+          "dense": 0.7292,
+          "bm25": 33.377,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 12",
+          "section": "(Hadr) : › 8.3 Mobilisation Phase",
+          "relevance": 0.8626,
+          "dense": 0.7372,
+          "bm25": 27.182,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "pp. 12–13",
+          "section": "Chapter II – The National Disaster Management Authority › Section 10. Powers and functions of National Executive Committee",
+          "relevance": 0.7457,
+          "dense": 0.697,
+          "bm25": 27.207,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "pp. 10–11",
+          "section": "Chapter II – The National Disaster Management Authority › Section 6. Powers and functions of National Authority",
+          "relevance": 0.6933,
+          "dense": 0.6966,
+          "bm25": 24.312,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 29",
+          "section": "Chapter VIII – 2[Disaster Response Force] › Section 45. Control, direction, etc",
+          "relevance": 0.4766,
+          "dense": null,
+          "bm25": 41.296,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "M3",
+        "category": "multi_document",
+        "question": "What lessons from the Sikkim earthquake are relevant to earthquake search and rescue response teams?",
+        "expected_sources": [
+          "earthquake-sikkireco",
+          "Eartrhquake"
+        ],
+        "expected_status": [
+          "answered",
+          "partial"
+        ]
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.8468,
+      "missing_entities": [],
+      "retrieval": {
+        "hit": true,
+        "reciprocal_rank": 1.0,
+        "first_relevant_rank": 1,
+        "source_recall": 1.0,
+        "sources_found": [
+          "earthquake-sikkireco",
+          "Eartrhquake"
+        ]
+      },
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- The team carried reconnaissance survey of the affected areas from 21 to 25 September 2011 and held interactions with officials from the State and Central Government Agencies, armed forces, communities, NGOs and civil societies involved in the relief and rescue operations. [E1]\n- Lessons from Sikkim earthquake – status check [E2]\n- Earthquake induced damage potential on the Hydropower projects in the Sikkim state required to be evaluated by a special team. [E3]\n- for Long term recovery Sikkim Earthquake & landslides [Sept 18, 2011] Response, Rescue , Debris clearance Damage and Loss assessment air & struction pa ns air st [E4]\n- Each USAR team should be comprised of all components of the team such as Management, Operation, Search, Rescue and Logistics. [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 19.6,
+        "keyword_search": 2.1,
+        "fusion": 0.2,
+        "retrieval_total": 22.0,
+        "generation": 0.6,
+        "total": 22.7
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 4",
+          "section": "Contents",
+          "relevance": 0.9458,
+          "dense": 0.8254,
+          "bm25": 23.081,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "pp. 2–3",
+          "section": "National Institute Of Disaster Management",
+          "relevance": 0.8389,
+          "dense": 0.8468,
+          "bm25": 16.986,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 34",
+          "section": "Introduction",
+          "relevance": 0.83,
+          "dense": 0.8025,
+          "bm25": 20.859,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "pp. 9–10",
+          "section": "Road Map",
+          "relevance": 0.8205,
+          "dense": 0.8122,
+          "bm25": 18.224,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 9",
+          "section": "8. Execution Of The Earthquake Disaster Response › 8.1 Preparatory Stage",
+          "relevance": 0.5,
+          "dense": null,
+          "bm25": 28.881,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 9",
+          "section": "8. Execution Of The Earthquake Disaster Response › 8.1 Preparatory Stage",
+          "relevance": 0.4621,
+          "dense": null,
+          "bm25": 22.797,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 3",
+          "section": "Ndrf • India",
+          "relevance": 0.4552,
+          "dense": null,
+          "bm25": 22.791,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 12",
+          "section": "(Hadr) : › 8.3 Mobilisation Phase",
+          "relevance": 0.442,
+          "dense": null,
+          "bm25": 21.466,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "I1",
+        "category": "insufficient",
+        "question": "Summarize the earthquake information available in the ISRO data.",
+        "expected_sources": [],
+        "expected_status": [
+          "insufficient",
+          "partial"
+        ],
+        "expect_abstain": true,
+        "note": "No ISRO document is in the current corpus."
+      },
+      "status": "insufficient",
+      "status_ok": true,
+      "abstained": true,
+      "gate_passed": true,
+      "best_dense": 0.7508,
+      "missing_entities": [
+        "ISRO"
+      ],
+      "retrieval": {},
+      "answer": "⚠ The knowledge base contains no passage mentioning: ISRO. The sentences below are only related material, not an answer.\n\n**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- Such systems provide a means for modern urban regions to cope effectively with the aftermath of major earthquakes and, in some cases, they may even provide warning, seconds before the arrival of seismic waves (Kanamori, et al, 1997). [E1]\n- Earthquake catalogue summary for Oman – source: Official Website of National Center of Seismology. [E2]\n- Earthquake catalogue summary for Odisha (India) – source: Official Website of National Center of Seismology. [E3]\n- Earthquake catalogue summary for Uzbekistan – source: Official Website of National Center of Seismology. [E4]\n- Earthquake catalogue summary for Sri Lanka – source: Official Website of National Center of Seismology. [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 12.0,
+        "keyword_search": 0.7,
+        "fusion": 0.2,
+        "retrieval_total": 12.9,
+        "generation": 0.8,
+        "total": 13.7
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 19",
+          "section": "Introduction",
+          "relevance": 0.8498,
+          "dense": 0.7289,
+          "bm25": 3.492,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 23 rows summarised",
+          "section": "Oman",
+          "relevance": 0.575,
+          "dense": 0.7508,
+          "bm25": null,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 15 rows summarised",
+          "section": "Odisha",
+          "relevance": 0.5657,
+          "dense": 0.7436,
+          "bm25": null,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 30 rows summarised",
+          "section": "Uzbekistan",
+          "relevance": 0.5567,
+          "dense": 0.7377,
+          "bm25": null,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 8 rows summarised",
+          "section": "Sri Lanka",
+          "relevance": 0.5235,
+          "dense": 0.7318,
+          "bm25": null,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 6",
+          "section": "Contents",
+          "relevance": 0.5,
+          "dense": null,
+          "bm25": 3.679,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 6",
+          "section": "1. Introduction",
+          "relevance": 0.4919,
+          "dense": null,
+          "bm25": 3.639,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "pp. 1–3",
+          "section": "Ndrf • India",
+          "relevance": 0.4841,
+          "dense": null,
+          "bm25": 3.618,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "I2",
+        "category": "insufficient",
+        "question": "What is the recipe for a chocolate cake?",
+        "expected_sources": [],
+        "expected_status": [
+          "insufficient"
+        ],
+        "expect_abstain": true
+      },
+      "status": "insufficient",
+      "status_ok": true,
+      "abstained": true,
+      "gate_passed": false,
+      "best_dense": 0.414,
+      "missing_entities": [],
+      "retrieval": {},
+      "answer": "The knowledge base does not contain enough evidence to answer this question. The closest retrieved passages are shown below for transparency, but none of them is relevant enough to support an answer.",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "gate",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.0,
+        "dense_search": 14.0,
+        "keyword_search": 1.2,
+        "fusion": 0.1,
+        "retrieval_total": 15.3,
+        "generation": 0.0,
+        "total": 15.4
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "pp. 29–30",
+          "section": "10. Conclusion",
+          "relevance": 0.5,
+          "dense": 0.414,
+          "bm25": null,
+          "cited": false
+        },
+        {
+          "id": "E2",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 24",
+          "section": "10. Conclusion",
+          "relevance": 0.4919,
+          "dense": 0.4071,
+          "bm25": null,
+          "cited": false
+        },
+        {
+          "id": "E3",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 37",
+          "section": "Chapter XI – Miscellaneous › Section 78. Power of State Government to make rules",
+          "relevance": 0.4621,
+          "dense": 0.3938,
+          "bm25": null,
+          "cited": false
+        },
+        {
+          "id": "E4",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 43",
+          "section": "Documentation Of Sikkim Earthquake 2011",
+          "relevance": 0.4552,
+          "dense": 0.3922,
+          "bm25": null,
+          "cited": false
+        },
+        {
+          "id": "E5",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 35",
+          "section": "Introduction",
+          "relevance": 0.442,
+          "dense": 0.3852,
+          "bm25": null,
+          "cited": false
+        },
+        {
+          "id": "E6",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 37",
+          "section": "Chapter XI – Miscellaneous › Section 77. Rules and regulations to be laid before Parliament",
+          "relevance": 0.4357,
+          "dense": 0.3839,
+          "bm25": null,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 33",
+          "section": "Chapter XI – Miscellaneous › Section 61. Prohibition against discrimination",
+          "relevance": 0.4296,
+          "dense": 0.3829,
+          "bm25": null,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 7",
+          "section": "Contents",
+          "relevance": 0.4236,
+          "dense": 0.3795,
+          "bm25": null,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "I3",
+        "category": "insufficient",
+        "question": "How many people died in the 2015 Nepal earthquake?",
+        "expected_sources": [],
+        "expected_status": [
+          "insufficient",
+          "partial"
+        ],
+        "expect_abstain": true,
+        "note": "Catalogue starts in Feb 2016 and has no casualty figures."
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.7246,
+      "missing_entities": [],
+      "retrieval": {},
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- Earthquake events recorded in Nepal (events 51–60 of 174): [E1]\n- Earthquake events recorded in Nepal (events 61–70 of 174): [E2]\n- The Fateful Sunday – Sept 18, 2011 On Sunday, 18 September 2011 at 6:11PM (local time), a Mw 6.9 earthquake with an epicenter located near the Sikkim-Nepal border region (27.723°N, 88.064°E), killed 77 people, including 16 at the Teesta Stage III Hydroelectric power project site, injured 719, left thousands homeless, and temporarily displaced many and also caused substantial loss to livestock. [E3]\n- Scientific publications have warned that severe earthquakes are likely to occur anytime in the Himalayan Region, which could adversely affect the lives of several million people in India. [E4]\n- In addition about $200 million US damage was caused in Tibet (China), and slightly higher in Eastern Nepal in addition to losses in Bhutan with around 6000 buildings damaged. [Cumulative deaths and economic losses related to global 2011-dollar GDP (PPP) and population, (source Daniell et al, CATDAT -2011)] [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 14.2,
+        "keyword_search": 1.6,
+        "fusion": 0.2,
+        "retrieval_total": 16.0,
+        "generation": 0.7,
+        "total": 16.7
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 3197–3354",
+          "section": "Nepal",
+          "relevance": 0.942,
+          "dense": 0.7246,
+          "bm25": 10.602,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 3355–3653",
+          "section": "Nepal",
+          "relevance": 0.9327,
+          "dense": 0.7215,
+          "bm25": 10.609,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 11",
+          "section": "Introduction",
+          "relevance": 0.872,
+          "dense": 0.6813,
+          "bm25": 19.367,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 3",
+          "section": "Ndrf • India",
+          "relevance": 0.8472,
+          "dense": 0.6559,
+          "bm25": 15.071,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "pp. 6–7",
+          "section": "Contents",
+          "relevance": 0.7991,
+          "dense": 0.718,
+          "bm25": 10.197,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "pp. 36–37",
+          "section": "Introduction",
+          "relevance": 0.4919,
+          "dense": null,
+          "bm25": 17.565,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 10000 rows summarised",
+          "section": "Catalogue overview",
+          "relevance": 0.4032,
+          "dense": 0.6317,
+          "bm25": null,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "Sikkim Earthquake (2011)- Reconstruction Strategy",
+          "file": "earthquake-sikkireco.pdf",
+          "locator": "p. 6",
+          "section": "Contents",
+          "relevance": 0.3961,
+          "dense": 0.7118,
+          "bm25": null,
+          "cited": false
+        }
+      ]
+    },
+    {
+      "test": {
+        "id": "I4",
+        "category": "insufficient",
+        "question": "What is the tsunami evacuation procedure for the Kerala coast?",
+        "expected_sources": [],
+        "expected_status": [
+          "insufficient",
+          "partial"
+        ],
+        "expect_abstain": true
+      },
+      "status": "partial",
+      "status_ok": true,
+      "abstained": false,
+      "gate_passed": true,
+      "best_dense": 0.6922,
+      "missing_entities": [],
+      "retrieval": {},
+      "answer": "**Extractive mode** – no LLM is configured, so these are the most relevant sentences quoted verbatim from the retrieved evidence (not a synthesised answer):\n\n- 2018-07-09 12:52:18 IST | M3.3 (ML) | depth 10 km | lat 12.576, lon 75.586 | 81km NNE of Kannur, Kerala, India [E1]\n- 2021-04-29 15:37:35 IST | M2.8 (ML) | depth 10 km | lat 7.995, lon 76.684 | 65km SSW of Thiruvananthapuram, Kerala, India [E2]\n- (iv) carrying out evacuation of persons or live-stock from an area of any threatening disaster situation or disaster; [E3]\n- The objective of this SOP is to establish operating procedures for addressing all aspects of management during earthquake disasters. [E4]\n- 2[(ga) \"evacuation\" means moving people or assets temporarily to safer places before, during or after the occurrence of a hazardous event; [E5]",
+      "generation": {
+        "provider": "extractive",
+        "model": "none (evidence sentences only)",
+        "generative": false,
+        "mode": "extractive",
+        "error": null,
+        "invalid_citations_removed": []
+      },
+      "timings_ms": {
+        "query_processing": 0.1,
+        "dense_search": 13.6,
+        "keyword_search": 1.3,
+        "fusion": 0.1,
+        "retrieval_total": 15.1,
+        "generation": 0.7,
+        "total": 15.8
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', 10 rows summarised",
+          "section": "Kerala",
+          "relevance": 1.0,
+          "dense": 0.6837,
+          "bm25": 13.389,
+          "cited": true
+        },
+        {
+          "id": "E2",
+          "document": "Official Website of National Center of Seismology",
+          "file": "Official Website of National Center of Seismology 1.xlsx",
+          "locator": "Sheet 'Sheet1', rows 1372–9363",
+          "section": "Kerala",
+          "relevance": 1.0,
+          "dense": 0.6922,
+          "bm25": 13.975,
+          "cited": true
+        },
+        {
+          "id": "E3",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 26",
+          "section": "Chapter V – Measures By The Government For Disaster Management › Section 39. Responsibilities of departments of the State Government",
+          "relevance": 0.9019,
+          "dense": 0.6531,
+          "bm25": 10.075,
+          "cited": true
+        },
+        {
+          "id": "E4",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 7",
+          "section": "4. Objectives",
+          "relevance": 0.8917,
+          "dense": 0.6659,
+          "bm25": 5.149,
+          "cited": true
+        },
+        {
+          "id": "E5",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 7",
+          "section": "Chapter I – Preliminary › Section 2. Definitions",
+          "relevance": 0.8674,
+          "dense": 0.6508,
+          "bm25": 7.013,
+          "cited": true
+        },
+        {
+          "id": "E6",
+          "document": "The Disaster Management Act, 2005",
+          "file": "DM-Act-2005.pdf",
+          "locator": "p. 7",
+          "section": "Chapter I – Preliminary › Section 2. Definitions",
+          "relevance": 0.8603,
+          "dense": 0.6467,
+          "bm25": 7.342,
+          "cited": false
+        },
+        {
+          "id": "E7",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "pp. 23–24",
+          "section": "10. Conclusion",
+          "relevance": 0.8318,
+          "dense": 0.6469,
+          "bm25": 5.268,
+          "cited": false
+        },
+        {
+          "id": "E8",
+          "document": "NDRF Standard Operating Procedure on Earthquake",
+          "file": "Eartrhquake.pdf",
+          "locator": "p. 7",
+          "section": "3. Purpose",
+          "relevance": 0.8095,
+          "dense": 0.6413,
+          "bm25": 5.405,
+          "cited": false
+        }
+      ]
+    }
+  ]
+}

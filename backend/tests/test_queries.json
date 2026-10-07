@@ -1,0 +1,46 @@
+{
+  "_comment": "Test set for the basic RAG prototype. expected_sources are substrings of source_file names that SHOULD appear in the top-k evidence. expected_status lists acceptable answer statuses (meaningful when an LLM is configured). expect_abstain=true means the system should NOT present a confident answer.",
+  "queries": [
+    {"id": "H1", "category": "historical", "question": "What information is available about the 2001 Gujarat earthquake?",
+     "expected_sources": ["earthquake-sikkireco", "National Center of Seismology"], "expected_status": ["partial", "insufficient"],
+     "note": "Current corpus has no dedicated 2001 Kutch/Bhuj document (KUTCH 2001.pdf not yet added); only a reference to 'Gujarat earthquake lessons' and the 2016-2024 NCS catalogue for Gujarat."},
+    {"id": "H2", "category": "historical", "question": "When did the 2011 Sikkim earthquake occur and what was its magnitude?",
+     "expected_sources": ["earthquake-sikkireco"], "expected_status": ["answered"]},
+    {"id": "H3", "category": "historical", "question": "Which were the strongest earthquakes recorded in India in the National Center of Seismology catalogue?",
+     "expected_sources": ["National Center of Seismology"], "expected_status": ["answered", "partial"]},
+
+    {"id": "P1", "category": "policy", "question": "What does the Disaster Management Act 2005 say about disaster management?",
+     "expected_sources": ["DM-Act-2005"], "expected_status": ["answered", "partial"]},
+    {"id": "P2", "category": "policy", "question": "What are the powers and functions of the District Disaster Management Authority?",
+     "expected_sources": ["DM-Act-2005"], "expected_status": ["answered"]},
+    {"id": "P3", "category": "policy", "question": "How is the National Disaster Response Force constituted under the DM Act?",
+     "expected_sources": ["DM-Act-2005"], "expected_status": ["answered"]},
+    {"id": "P4", "category": "policy", "question": "What is the punishment for a false warning under the Disaster Management Act?",
+     "expected_sources": ["DM-Act-2005"], "expected_status": ["answered"]},
+
+    {"id": "L1", "category": "location", "question": "What earthquake information is available for Sikkim?",
+     "expected_sources": ["earthquake-sikkireco", "National Center of Seismology"], "expected_status": ["answered", "partial"]},
+    {"id": "L2", "category": "location", "question": "Which earthquakes have been recorded in Uttarakhand?",
+     "expected_sources": ["National Center of Seismology"], "expected_status": ["answered", "partial"]},
+    {"id": "L3", "category": "location", "question": "What seismic activity has been recorded around the Andaman and Nicobar Islands?",
+     "expected_sources": ["National Center of Seismology"], "expected_status": ["answered", "partial"]},
+
+    {"id": "M1", "category": "multi_document", "question": "What emergency response information is present in the knowledge base?",
+     "expected_sources": ["DM-Act-2005", "Eartrhquake"], "expected_status": ["answered", "partial"]},
+    {"id": "M2", "category": "multi_document", "question": "How do NDRF search and rescue procedures relate to the legal role of the National Disaster Response Force?",
+     "expected_sources": ["Eartrhquake", "DM-Act-2005"], "expected_status": ["answered", "partial"]},
+    {"id": "M3", "category": "multi_document", "question": "What lessons from the Sikkim earthquake are relevant to earthquake search and rescue response teams?",
+     "expected_sources": ["earthquake-sikkireco", "Eartrhquake"], "expected_status": ["answered", "partial"]},
+
+    {"id": "I1", "category": "insufficient", "question": "Summarize the earthquake information available in the ISRO data.",
+     "expected_sources": [], "expected_status": ["insufficient", "partial"], "expect_abstain": true,
+     "note": "No ISRO document is in the current corpus."},
+    {"id": "I2", "category": "insufficient", "question": "What is the recipe for a chocolate cake?",
+     "expected_sources": [], "expected_status": ["insufficient"], "expect_abstain": true},
+    {"id": "I3", "category": "insufficient", "question": "How many people died in the 2015 Nepal earthquake?",
+     "expected_sources": [], "expected_status": ["insufficient", "partial"], "expect_abstain": true,
+     "note": "Catalogue starts in Feb 2016 and has no casualty figures."},
+    {"id": "I4", "category": "insufficient", "question": "What is the tsunami evacuation procedure for the Kerala coast?",
+     "expected_sources": [], "expected_status": ["insufficient", "partial"], "expect_abstain": true}
+  ]
+}
